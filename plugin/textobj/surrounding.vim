@@ -4,7 +4,6 @@
 " Author: Vesion, 2015
 
 
-echom 'enter surrounding'
 if exists('g:loaded_textobj_surrounding')
     finish
 endif

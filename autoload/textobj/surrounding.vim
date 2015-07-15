@@ -13,18 +13,15 @@ endfunction
 
 function! s:Select(mode)
     if s:FindBrace()
-        echom getpos('.')
         let startpos = getpos('.')
         normal! %
         let endpos = getpos('.')
     elseif s:FindQuote()
-        echom getpos('.')
         let startpos = getpos('.')
         let _ = getline('.')[col('.')-1]
         execute 'normal! f' . _
         let endpos = getpos('.')
     else
-        echom 'not found surroundings'
         return 0
     endif
 
@@ -37,12 +34,10 @@ function! s:Select(mode)
 endfunction
 
 function! textobj#surrounding#select_a()
-    echom 'select a'
     return s:Select('a')
 endfunction
 
 function! textobj#surrounding#select_i()
-    echom 'select i'
     return s:Select('i')
 endfunction
 
