@@ -11,8 +11,8 @@ endif
 
 call textobj#user#plugin('surrounding', {
 \      'sur': {
-\        'select-a': 'ak', 'select-a-function': 'textobj#surrounding#select_a',
-\        'select-i': 'ik', 'select-i-function': 'textobj#surrounding#select_i',
+\        'select-a': 'aj', 'select-a-function': 'textobj#surrounding#select_a',
+\        'select-i': 'ij', 'select-i-function': 'textobj#surrounding#select_i',
 \      },
 \    })
 

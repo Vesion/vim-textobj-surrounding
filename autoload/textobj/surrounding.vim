@@ -38,11 +38,11 @@ endfunction
 
 function! textobj#surrounding#select_a()
     echom 'select a'
-    call s:Select('a')
+    return s:Select('a')
 endfunction
 
 function! textobj#surrounding#select_i()
     echom 'select i'
-    call s:Select('i')
+    return s:Select('i')
 endfunction
 
