@@ -1,5 +1,5 @@
-" vim-textobj-restline -- Text object for the rest of current line
-" The 'rest' means from the cursor positon to the end
+" vim-textobj-surrounding -- Text object for all surroundings
+" like (), {}, [], <>, ' ', \" \"
 " Version: 0.0.1
 " Author: Vesion, 2015
 
