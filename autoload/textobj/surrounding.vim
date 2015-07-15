@@ -22,7 +22,7 @@ function! s:Select(mode)
         elseif '<' ==? _
             call search('>', 'ce')
         else
-            call search(_, 'ce')
+            call search(_, 'e')
         endif
         let endpos = getpos('.')
     endif
