@@ -3,14 +3,6 @@
 " Version: 0.0.1
 " Author: Vesion, 2015
 
-function! s:FindBrace()
-    return search('[\|(\|{', 'bce')
-endfunction
-
-function! s:FindQuote()
-    return search('<\|`\|''\|"', 'bce')
-endfunction
-
 function! s:Select(mode)
     if search('[\|(\|{\|<\|`\|''\|"', 'bce') == 0
         return 0
