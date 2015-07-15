@@ -11,17 +11,20 @@ function! s:FindQuote()
     return search('<\|`\|''\|"', 'bce')
 endfunction
 
-function! s:select(mode)
+function! s:Select(mode)
     if s:FindBrace()
+        echom getpos('.')
         let startpos = getpos('.')
         normal! %
         let endpos = getpos('.')
     elseif s:FindQuote()
+        echom getpos('.')
         let startpos = getpos('.')
         let _ = getline('.')[col('.')-1]
         execute 'normal! f' . _
         let endpos = getpos('.')
     else
+        echom 'not found surroundings'
         return 0
     endif
 
@@ -34,10 +37,12 @@ function! s:select(mode)
 endfunction
 
 function! textobj#surrounding#select_a()
-    call s:select('a')
+    echom 'select a'
+    call s:Select('a')
 endfunction
 
 function! textobj#surrounding#select_i()
-    call s:select('i')
+    echom 'select i'
+    call s:Select('i')
 endfunction
 
