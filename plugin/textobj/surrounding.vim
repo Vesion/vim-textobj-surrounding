@@ -8,7 +8,7 @@ if exists('g:loaded_textobj_surrounding')
     finish
 endif
 
-
+echom 'enter surrounding'
 call textobj#user#plugin('surrounding', {
 \      'sur': {
 \        'select-a': 'aj', 'select-a-function': 'textobj#surrounding#select_a',
