@@ -29,7 +29,12 @@ function! s:Select(mode)
 
     if a:mode ==# 'i'
         let startpos[2] += 1
-        let endpos[2] -= 1
+        if endpos[2] == 1
+            normal! k$
+            let endpos = getpos('.')
+        else
+            let endpos[2] -= 1
+        endif
     endif
     
     return ['v', startpos, endpos]
