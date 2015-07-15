@@ -12,17 +12,19 @@ function! s:FindQuote()
 endfunction
 
 function! s:Select(mode)
-    if s:FindBrace()
-        let startpos = getpos('.')
-        normal! %
-        let endpos = getpos('.')
-    elseif s:FindQuote()
+    if search('[\|(\|{\|<\|`\|''\|"', 'bce') == 0
+        return 0
+    else
         let startpos = getpos('.')
         let _ = getline('.')[col('.')-1]
-        execute 'normal! f' . _
+        if match('[({', _) != -1
+            normal! %
+        elseif '<' ==? _
+            execute 'normal! f>'
+        else
+            execute 'normal! f' . _
+        endif
         let endpos = getpos('.')
-    else
-        return 0
     endif
 
     if a:mode ==# 'i'
