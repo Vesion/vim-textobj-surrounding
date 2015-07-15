@@ -1,5 +1,5 @@
 " vim-textobj-surrounding -- Text object for all surroundings
-" like (), {}, [], <>, ' ', \" \"
+" including (), {}, [], <>, ' ', \" \", ` `
 " Version: 0.0.1
 " Author: Vesion, 2015
 

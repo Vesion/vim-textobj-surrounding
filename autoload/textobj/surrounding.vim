@@ -1,5 +1,5 @@
 " vim-textobj-surrounding -- Text object for all surroundings
-" like (), {}, [], <>, ' ', \" \"
+" including (), {}, [], <>, ' ', \" \", ` `
 " Version: 0.0.1
 " Author: Vesion, 2015
 
@@ -20,9 +20,9 @@ function! s:Select(mode)
         if match('[({', _) != -1
             normal! %
         elseif '<' ==? _
-            execute 'normal! f>'
+            call search('>', 'ce')
         else
-            execute 'normal! f' . _
+            call search(_, 'ce')
         endif
         let endpos = getpos('.')
     endif
